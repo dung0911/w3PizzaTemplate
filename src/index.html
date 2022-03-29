@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+</head>
+<style>
+    .bgImg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../images/pizza.jpg');
+        min-height: 90%;
+    }
+
+    .font {
+        font-size: 100px;
+        font-family: "Amatic SC", sans-serif;
+    }
+
+    .text {
+        transform: translate(-50%, -50%);
+    }
+
+    .btn {}
+
+    /* Style the active class, and buttons on mouse-over */
+    .active {
+        background-color: red;
+
+    }
+
+    .about {
+        background-color: #f44336;
+    }
+
+    .index {
+        z-index: 1;
+    }
+
+    .scale {
+        filter: grayscale(75%);
+
+    }
+
+    .bgGray {
+        background-color: #607d8b;
+    }
+</style>
+
+<body>
+    <div class="w-full h-screen">
+        <div class="md:flex hidden index fixed bg-black bg-opacity-50 hover:bg-black list-none w-full">
+            <button class="hover:bg-gray-300 p-2 "><a href=""
+                    class="p-2 uppercase hover:text-black text-white">home</a></button>
+            <button class="hover:bg-gray-300 p-2 "><a href=""
+                    class="p-2 uppercase hover:text-black text-white">menu</a></button>
+            <button class="hover:bg-gray-300 p-2 "><a href=""
+                    class="p-2 uppercase hover:text-black text-white">about</a></button>
+            <button class="hover:bg-gray-300 p-2 "><a href=""
+                    class="p-2 uppercase hover:text-black text-white">contact</a></button>
+        </div>
+        <header class="bgImg scale">
+            <div class="text-center text absolute top-1/2 left-1/2 w-full">
+                <span class="text-white font">
+                    THIN <br>
+                    CRUST PIZZA
+                </span><br>
+                <button class="bg-black text-white hover:bg-gray-400 hover:text-black p-4 uppercase text-2xl ">Let me
+                    see
+                    the menu</button>
+            </div>
+            <div class="absolute left-3 bottom-20 bg-black text-white p-2">
+                <span>Open from 10am to 12pm</span>
+            </div>
+        </header>
+        <div class="w-full bg-black">
+            <div class="uppercase container mx-auto w-2/3">
+                <div class="text-white text-center py-24">
+                    <span class="uppercase text-2xl">the menu</span>
+                </div>
+                <div class="border-gray-500 flex border-2" id="myDIV">
+                    <a class="w-1/3" href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                        <div class="s4 py-6 uppercase text-lg text-center tablink hover:bg-red-600 text-white active">
+                            Pizza</div>
+                    </a>
+                    <a class="w-1/3" href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+                        <div class="s4 py-6 uppercase text-lg text-center tablink hover:bg-red-600 text-white btn">
+                            Salads
+                        </div>
+                    </a>
+                    <a class="w-1/3" href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+                        <div class="s4 py-6 uppercase text-lg text-center tablink hover:bg-red-600 text-white btn">
+                            Starter
+                        </div>
+                    </a>
+                </div>
+                <div id="Pizza" class="menu p-5 bg-white" style="display: block;">
+                    <h1 class="flex justify-between py-3"><b>Margherita</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$12.50</span></h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Formaggio</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$15.50</span></h1>
+                    <p class="text-gray-500 pb-8">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Chicken</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$17.00</span></h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, mozzarella, chicken, onions</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Pineapple'o'clock</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$16.50</span></h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+                    <hr>
+
+                    <h1 class="py-3 flex justify-between">
+                        <div class="">
+                            <b>Meat Town</b>
+                            <span class="text-white bg-red-600 p-2 rounded-md text-lg">Hot!</span>
+                        </div>
+                        <span class="text-white bg-gray-400 p-4 rounded-md">$20.00</span>
+                    </h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken
+                    </p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3">
+                        <div class="">
+                            <b>Parma</b>
+                            <span class="text-black bg-gray-400 p-2 rounded-md text-lg">New</span>
+                        </div>
+                        <span class="text-white bg-gray-400 p-4 rounded-md">$21.50</span>
+                    </h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
+                </div>
+                <div id="Pasta" class="menu p-5 bg-white" style="display: none;">
+                    <h1 class="flex justify-between py-3">
+                        <div class="">
+                            <b>Lasagna</b> <span class="text-black bg-gray-400 p-2 rounded-md text-lg">Popular</span>
+                        </div>
+                        <span class="text-white bg-gray-400 p-4 rounded-md">$13.50</span>
+                    </h1>
+                    <p class="text-gray-500 pb-8">Special sauce, mozzarella, parmesan, ground beef</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Ravioli</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$14.50</span></h1>
+                    <p class="text-gray-500 pb-8">Ravioli filled with cheese</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Spaghetti Classica</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$11.00</span></h1>
+                    <p class="text-gray-500 pb-8">Fresh tomatoes, onions, ground beef</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Seafood pasta</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$25.50</span></h1>
+                    <p class="text-gray-500 pb-8">Salmon, shrimp, lobster, garlic</p>
+                </div>
+                <div id="Starter" class="menu p-5 bg-white" style="display: none;">
+                    <h1 class="flex justify-between py-3">
+                        <div class="">
+                            <b>Today's Soup</b> <span
+                                class="text-black bg-gray-400 p-2 rounded-md text-lg">Seasonal</span>
+                        </div>
+                        <span class="text-white bg-gray-400 p-4 rounded-md">$5.50</span>
+                    </h1>
+                    <p class="text-gray-500 pb-8">Ask the waiter</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Bruschetta</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$8.50</span></h1>
+                    <p class="text-gray-500 pb-8">Bread with pesto, tomatoes, onion, garlic</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Garlic bread</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$9.50</span></h1>
+                    <p class="text-gray-500 pb-8">Grilled ciabatta, garlic butter, onions</p>
+                    <hr>
+
+                    <h1 class="flex justify-between py-3"><b>Tomozzarella</b> <span
+                            class="text-white bg-gray-400 p-4 rounded-md">$10.50</span></h1>
+                    <p class="text-gray-500 pb-8">Tomatoes and mozzarella</p>
+                </div>
+            </div>
+        </div>
+        <div class="about scale">
+            <div class=" uppercase container mx-auto w-2/3">
+                <div class="text-white text-center py-24">
+                    <span class="uppercase text-2xl">the menu</span>
+                </div>
+                <div class="text-white">
+                    <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                    <div class="flex justify-between py-6">
+                        <div class="">
+                            <p class="py-6"><span class="font-bold">The Chef?</span> Mr. Italiano himself</p>
+                            <p>We are proud of our interiors.</p>
+                        </div>
+                        <img src="../images/chef.jpg" class="rounded-full" style="width: 150px;" alt="">
+                    </div>
+                    <div class="mb-6">
+                        <img src="../images/onepage_restaurant.jpg" alt="">
+                    </div>
+                    <span class="font-bold text-white text-2xl">Opening Hours
+                    </span>
+                    <div class="relative flex justify-between py-10 w-2/3">
+                        <div class="list-none">
+                            <li class="py-3">Mon & Tue CLOSED</li>
+                            <li class="py-3">Wednesday 10.00 - 24.00</li>
+                            <li class="py-3">Thursday 10:00 - 24:00</li>
+                        </div>
+                        <div class="list-none">
+                            <li class="py-3">Friday 10:00 - 12:00
+
+                            </li>
+                            <li class="py-3">Saturday 10:00 - 23:00
+
+                            </li>
+                            <li class="py-3">Sunday Closed
+
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="../images/map.jpg" class="scale" alt="">
+
+        <div class="bgGray scale text-white">
+            <div class=" uppercase container mx-auto w-2/3">
+                <div class="text-white text-center py-24">
+                    <span class="uppercase text-2xl">the menu</span>
+                </div>
+                <p>Find us at some address at some place or call us at 05050515-122330</p>
+                <p class="py-6 leading-loose"><span class="bg-black p-2">FYI!</span> We offer full-service catering for
+                    any event, large or small. We understand your needs and we will cater the food to satisfy the
+                    biggerst criteria of them all, both look and taste.</p>
+                <p class="text-lg"> <span class="font-bold text-xl leading-loose">Reserve</span> a table, ask for
+                    today's special or just send us a message:</p>
+                <form action="" class="py-5">
+                    <input type="text" class="w-full py-5 px-3 mb-5" placeholder="NAME">
+                    <input type="text" class="w-full py-5 px-3 mb-5" placeholder="HOW MANY PEOPLE">
+                    <input type="datetime-local" id="meeting-time" 4 name="meeting-time" value="2018-06-12T19:30" 5
+                        min="2018-06-07T00:00" max="2018-06-14T00:00" class="w-full text-gray-300 py-5 px-3 mb-5">
+                    <input type="text" class="w-full py-5 px-3 mb-5" placeholder="MESSAGE \ SPECIAL REQUIREMENTS">
+                    <button class="text-center w-full bg-white py-5 text-black hover:bg-gray-300"><span>SEND
+                            MESSAGE</span> </button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="bg-black text-white text-center pt-14" style="height: 150px;">
+                <p>Powered by <a href="" class="underline">W3.CSS</a></p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Tabbed Menu
+        function openMenu(evt, menuName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("menu");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(menuName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-red";
+        }
+        document.getElementById("myLink").click();
+    </script>
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+
+</html>
